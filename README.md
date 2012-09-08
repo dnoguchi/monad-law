@@ -74,7 +74,7 @@ Scala における圏論
   ただし，実際の実装においては，以下で述べる Keisli トリプルからモナドを構成する
   方法が採用されることが多い(と思われる)。  
   余談:  
-    以下の定義が使用される理由を圏論的に述べると，自然変換の合成の話から，
+    以下の定義が採用される理由を圏論的に述べると，自然変換の合成の話から，
     射の合成の話へ落とし込めるからと思われる。
 
 * Keisli トリプルからの構成 
@@ -100,6 +100,7 @@ Scala における圏論
   証明.  
     m map { x => identity(x) } = m flatMap { x => unit(identity(x)) } // 定義より  
                                = m // M1 より  
+
   F2 を満たすこと  
   証明.  
     m map f map g = m flatMap { x => unit(f(x)) } flatMap { y => unit(g(y)) } // 定義より  
@@ -131,12 +132,27 @@ Scala における圏論
 
 ### 参考資料
 
-[モナドのすべて][all-about-monads]: http://www.sampou.org/haskell/a-a-monads/html/ 
-[Option.flatten should return Option, not List][option-flatten]: https://issues.scala-lang.org/browse/SI-4474
-[scalaz.Functor][scalaz.Functor]: http://scalaz.github.com/scalaz/scalaz-2.9.0-1-6.0/doc.sxr/scalaz/Functor.scala.html
-[圏論の基礎][categories]: http://www.amazon.co.jp/%E5%9C%8F%E8%AB%96%E3%81%AE%E5%9F%BA%E7%A4%8E-S-%E3%83%9E%E3%83%83%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%B3/dp/4621063243/ref=dp_ob_title_bk
-[「モナドは象だ(Monads are Elephants)」日本語訳][monads-are-elephants]: http://dl.dropbox.com/u/261418/Monads_are_Elephants/index.html 
-[モナドはメタファーではない][monads-are-not-metaphors]: http://eed3si9n.com/ja/monads-are-not-metaphors
+* [モナドのすべて][all-about-monads]
+* [Option.flatten should return Option, not List][option-flatten]
+* [scalaz.Functor][scalaz.Functor]
+* [圏論の基礎][categories]
+* [「モナドは象だ(Monads are Elephants)」日本語訳][monads-are-elephants]
+* [モナドはメタファーではない][monads-are-not-metaphors]
+* [モナドへの近道・Haskell からの寄道][monado-to-haskell]
+* [WIKIBOOKS Haskell/圏論][haskell-book]
+* [モナドメモ - 圏論におけるモナドの定義][monado-memo]
+* [Scala で圏論入門][introduction-to-category-theory-in-cala]
+* [はじめての圏論 その第1歩：しりとりの圏][introduction-to-category-theory]
 
-
+[all-about-monads]: http://www.sampou.org/haskell/a-a-monads/html/ 
+[option-flatten]: https://issues.scala-lang.org/browse/SI-4474
+[scalaz.Functor]: http://scalaz.github.com/scalaz/scalaz-2.9.0-1-6.0/doc.sxr/scalaz/Functor.scala.html
+[categories]: http://www.amazon.co.jp/%E5%9C%8F%E8%AB%96%E3%81%AE%E5%9F%BA%E7%A4%8E-S-%E3%83%9E%E3%83%83%E3%82%AF%E3%83%AC%E3%83%BC%E3%83%B3/dp/4621063243/ref=dp_ob_title_bk
+[monads-are-elephants]: http://dl.dropbox.com/u/261418/Monads_are_Elephants/index.html 
+[monads-are-not-metaphors]: http://eed3si9n.com/ja/monads-are-not-metaphors
+[monado-to-haskell]: http://kurt.scitec.kobe-u.ac.jp/~shg/SFCArchives/docs/shortcut_monad.pdf
+[haskell-book]: http://ja.wikibooks.org/wiki/Haskell/%E5%9C%8F%E8%AB%96
+[monado-memo]: http://www.sharp-bang.jp/prog/monad_memo.html
+[introduction-to-category-theory-in-cala]: https://github.com/scalajp/introduction-to-category-theory-in-scala-jp/wiki
+[introduction-to-category-theory]: http://d.hatena.ne.jp/m-hiyama/20060821/1156120185
 
